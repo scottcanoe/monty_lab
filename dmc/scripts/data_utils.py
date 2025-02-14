@@ -17,9 +17,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+# Path settings - mirrors those in configs/common.py
 DMC_ROOT_DIR = Path(os.environ.get("DMC_ROOT_DIR", "~/tbp/results/dmc")).expanduser()
 DMC_PRETRAIN_DIR = DMC_ROOT_DIR / "pretrained_models"
 DMC_RESULTS_DIR = DMC_ROOT_DIR / "results"
+VISUALIZATIONS_DIR = DMC_ROOT_DIR / "visualizations"
+# Analysis output directory
 DMC_ANALYSIS_DIR = Path(
     os.environ.get("DMC_ANALYSIS_DIR", "~/tbp/results/dmc_analysis")
 ).expanduser()
