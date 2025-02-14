@@ -44,7 +44,7 @@ from .fig9_structured_object_representations import (
 )
 
 # Main output directory for visualization experiment results.
-VISUALIZATIONS_DIR = os.path.join(DMC_ROOT_DIR, "visualizations")
+VISUALIZATION_RESULTS_DIR = os.path.join(DMC_ROOT_DIR, "visualizations")
 
 
 fig3_evidence_run = deepcopy(dist_agent_1lm)
@@ -60,7 +60,7 @@ fig3_evidence_run.update(
             max_eval_steps=100,
         ),
         logging_config=DetailedEvidenceLMLoggingConfig(
-            output_dir=str(VISUALIZATIONS_DIR),
+            output_dir=str(VISUALIZATIONS_RESULTS_DIR),
             run_name="fig3_evidence_run",
             wandb_group="dmc",
             monty_log_level="SELECTIVE",
@@ -79,7 +79,7 @@ fig3_evidence_run[
 
 fig4_visualize_8lm_patches = deepcopy(dist_agent_8lm_half_lms_match)
 fig4_visualize_8lm_patches["logging_config"].run_name = "fig4_visualize_8lm_patches"
-fig4_visualize_8lm_patches["logging_config"].output_dir = VISUALIZATIONS_DIR
+fig4_visualize_8lm_patches["logging_config"].output_dir = VISUALIZATION_RESULTS_DIR
 fig4_visualize_8lm_patches["logging_config"].monty_handlers.append(DetailedJSONHandler)
 fig4_visualize_8lm_patches["experiment_args"].n_eval_epochs = 1
 fig4_visualize_8lm_patches["experiment_args"].max_total_steps = 1
